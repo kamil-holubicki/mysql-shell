@@ -330,6 +330,11 @@ WHERE
                       establish a connection to the target instance.
 
 OPTIONS
+--adaptiveStepStrategy=<str>
+            Select which algorithm to use for chunk boundary calculation. Set
+            to “original” for the legacy algorithm or “enhanced” for
+            the new algorithm. Default: original.
+
 --analyzeTables=<str>
             "off", "on", "histogram" (default: off) - If 'on', executes ANALYZE
             TABLE for all tables, once copied. If set to 'histogram', only
@@ -481,6 +486,11 @@ OPTIONS
             (Megabytes), G (Gigabytes). Minimum value: 4096. Default: the value
             of bytesPerChunk.
 
+--maxKeyPrefixLength=<uint>
+            Define how many primary key columns, starting from the left, are
+            used for chunking. Set to 0 for no limit. If the value exceeds the
+            key’s length, the entire key is used. Default: 1.
+
 --maxRate=<str>
             Limit data read throughput to maximum rate, measured in bytes per
             second per thread. Use maxRate="0" to set no limit. Default: "0".
@@ -555,6 +565,11 @@ WHERE
                       establish a connection to the target instance.
 
 OPTIONS
+--adaptiveStepStrategy=<str>
+            Select which algorithm to use for chunk boundary calculation. Set
+            to “original” for the legacy algorithm or “enhanced” for
+            the new algorithm. Default: original.
+
 --analyzeTables=<str>
             "off", "on", "histogram" (default: off) - If 'on', executes ANALYZE
             TABLE for all tables, once copied. If set to 'histogram', only
@@ -689,6 +704,11 @@ OPTIONS
             (Megabytes), G (Gigabytes). Minimum value: 4096. Default: the value
             of bytesPerChunk.
 
+--maxKeyPrefixLength=<uint>
+            Define how many primary key columns, starting from the left, are
+            used for chunking. Set to 0 for no limit. If the value exceeds the
+            key’s length, the entire key is used. Default: 1.
+
 --maxRate=<str>
             Limit data read throughput to maximum rate, measured in bytes per
             second per thread. Use maxRate="0" to set no limit. Default: "0".
@@ -762,6 +782,11 @@ WHERE
                       establish a connection to the target instance.
 
 OPTIONS
+--adaptiveStepStrategy=<str>
+            Select which algorithm to use for chunk boundary calculation. Set
+            to “original” for the legacy algorithm or “enhanced” for
+            the new algorithm. Default: original.
+
 --all=<bool>
             Copy all views and tables from the specified schema, requires the
             tables argument to be an empty list. Default: false.
@@ -861,6 +886,11 @@ OPTIONS
             LOAD DATA statement. Supports unit suffixes: k (kilobytes), M
             (Megabytes), G (Gigabytes). Minimum value: 4096. Default: the value
             of bytesPerChunk.
+
+--maxKeyPrefixLength=<uint>
+            Define how many primary key columns, starting from the left, are
+            used for chunking. Set to 0 for no limit. If the value exceeds the
+            key’s length, the entire key is used. Default: 1.
 
 --maxRate=<str>
             Limit data read throughput to maximum rate, measured in bytes per
@@ -1029,6 +1059,11 @@ WHERE
       outputUrl: Target directory to store the dump files.
 
 OPTIONS
+--adaptiveStepStrategy=<str>
+            Select which algorithm to use for chunk boundary calculation. Set
+            to “original” for the legacy algorithm or “enhanced” for
+            the new algorithm. Default: original.
+
 --azureConfigFile=<str>
             Use the specified Azure configuration file instead of the one at
             the default location. Default: not set.
@@ -1189,6 +1224,11 @@ OPTIONS
             SELECT ... INTO OUTFILE. See Section 13.2.10.1, "SELECT ... INTO
             Statement". Default: "\n".
 
+--maxKeyPrefixLength=<uint>
+            Define how many primary key columns, starting from the left, are
+            used for chunking. Set to 0 for no limit. If the value exceeds the
+            key’s length, the entire key is used. Default: 1.
+
 --maxRate=<str>
             Limit data read throughput to maximum rate, measured in bytes per
             second per thread. Use maxRate="0" to set no limit. Default: "0".
@@ -1297,6 +1337,11 @@ WHERE
       schemas: List of schemas to be dumped.
 
 OPTIONS
+--adaptiveStepStrategy=<str>
+            Select which algorithm to use for chunk boundary calculation. Set
+            to “original” for the legacy algorithm or “enhanced” for
+            the new algorithm. Default: original.
+
 --azureConfigFile=<str>
             Use the specified Azure configuration file instead of the one at
             the default location. Default: not set.
@@ -1440,6 +1485,11 @@ OPTIONS
             SELECT ... INTO OUTFILE. See Section 13.2.10.1, "SELECT ... INTO
             Statement". Default: "\n".
 
+--maxKeyPrefixLength=<uint>
+            Define how many primary key columns, starting from the left, are
+            used for chunking. Set to 0 for no limit. If the value exceeds the
+            key’s length, the entire key is used. Default: 1.
+
 --maxRate=<str>
             Limit data read throughput to maximum rate, measured in bytes per
             second per thread. Use maxRate="0" to set no limit. Default: "0".
@@ -1549,6 +1599,11 @@ WHERE
       tables: List of tables/views to be dumped.
 
 OPTIONS
+--adaptiveStepStrategy=<str>
+            Select which algorithm to use for chunk boundary calculation. Set
+            to “original” for the legacy algorithm or “enhanced” for
+            the new algorithm. Default: original.
+
 --all=<bool>
             Dump all views and tables from the specified schema. Default:
             false.
@@ -1658,6 +1713,11 @@ OPTIONS
             SELECT ... INTO OUTFILE. See Section 13.2.10.1, "SELECT ... INTO
             Statement". Default: "\n".
 
+--maxKeyPrefixLength=<uint>
+            Define how many primary key columns, starting from the left, are
+            used for chunking. Set to 0 for no limit. If the value exceeds the
+            key’s length, the entire key is used. Default: 1.
+
 --maxRate=<str>
             Limit data read throughput to maximum rate, measured in bytes per
             second per thread. Use maxRate="0" to set no limit. Default: "0".
@@ -1762,6 +1822,8 @@ WHERE
       outputUrl: Target file to store the data.
 
 OPTIONS
+--adaptiveStepStrategy=<str>
+
 --azureConfigFile=<str>
             Use the specified Azure configuration file instead of the one at
             the default location. Default: not set.
@@ -1816,6 +1878,8 @@ OPTIONS
             This option has the same meaning as the corresponding clause for
             SELECT ... INTO OUTFILE. See Section 13.2.10.1, "SELECT ... INTO
             Statement". Default: "\n".
+
+--maxKeyPrefixLength=<uint>
 
 --maxRate=<str>
             Limit data read throughput to maximum rate, measured in bytes per

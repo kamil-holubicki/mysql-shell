@@ -85,7 +85,6 @@ void Dump_options::set_string_option(const std::string &option,
       throw std::invalid_argument(
           "The option 'compression' cannot be set to an empty string.");
     }
-
     m_compression =
         mysqlshdk::storage::to_compression(value, &m_compression_options);
   } else {

@@ -57,6 +57,11 @@ enum class Dry_run {
   DONT_WRITE_ANY_FILES,
 };
 
+enum class AdaptiveStepStrategy {
+  ORIGINAL,
+  ENHANCED,
+};
+
 class Dump_options : public mysqlsh::common::Common_options {
  public:
   using Filtering_options = mysqlshdk::db::Filtering_options;
@@ -157,6 +162,10 @@ class Dump_options : public mysqlsh::common::Common_options {
   bool report_dump_option() const { return m_report_dump_option; }
 
   void set_report_dump_option(bool value) { m_report_dump_option = value; }
+
+  virtual AdaptiveStepStrategy adaptive_step_strategy() const = 0;
+
+  virtual size_t max_key_prefix_length() const = 0;
 
   virtual bool split() const = 0;
 
